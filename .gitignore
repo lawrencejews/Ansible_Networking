@@ -1,0 +1,7 @@
+
+### Ansible ###
+*.retry
+
+DS_Store
+VS_code
+venv

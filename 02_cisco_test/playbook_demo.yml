@@ -1,0 +1,15 @@
+---
+- hosts: routers
+  gather_facts: no
+  tasks:
+  - name: print ansible Config location
+    ansible.builtin.debug:
+      msg:
+      - "{{ ansible_config_file }}"
+      - "{{ inventory_file }}"
+      - "{{ ansible_facts }}"
+  - name: Print Router hostname
+    ansible.builtin.debug:
+      msg:
+      - "{{ ansible_host }}"
+    when: ansible_connection == 'ansible.netcommon.network_cli'
